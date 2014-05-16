@@ -1,0 +1,78 @@
+\documentclass[paper=a4, fontsize=11pt]{scrartcl}
+
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel} 
+\usepackage{url} % for clickable links
+%\usepackage{lmodern}
+%\usepackage[top=5cm, bottom=5cm, left=6cm, right=3cm]{geometry} % Les marges.
+\usepackage[protrusion=true,expansion=true]{microtype}	
+\usepackage[pdftex]{graphicx}	
+
+%%%%%%%%%%%%%%%
+%%% Custom sectioning
+\usepackage{sectsty}
+\allsectionsfont{\centering \normalfont\scshape}
+
+
+%%% Custom headers/footers
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+\fancyhead{}											% No page header
+\fancyfoot[L]{}											% Empty 
+\fancyfoot[C]{}											% Empty
+\fancyfoot[R]{\thepage}									% Pagenumbering
+\renewcommand{\headrulewidth}{0pt}			% Remove header underlines
+\renewcommand{\footrulewidth}{0pt}				% Remove footer underlines
+\setlength{\headheight}{13.6pt}
+%%%%%%%
+
+
+
+
+%%% Maketitle metadata
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} 	% Horizontal rule
+
+\title{
+		%\vspace{-1in} 	
+		\usefont{OT1}{bch}{b}{n}
+		\normalfont \normalsize \textsc{Halmstad's University} \\ [25pt]
+		\horrule{0.5pt} \\[0.4cm]
+		\huge An awesome sound editor \\
+		\horrule{2pt} \\[0.5cm]
+}
+\author{
+		\normalfont 								\normalsize
+        By Hichame Moriceau and Rémi Gourdon\\[-3pt]		\normalsize
+        \today
+}
+\date{}
+
+
+
+
+
+
+%\title{An awesome sound editor}
+%\author{\textsc{Hichame Moriceau} - \textsc{Rémi Gourdon}}
+%\date{\today} 
+
+\begin{document}
+\maketitle % Page de garde.
+
+\section{Introduction}
+
+\section{Framework Design and structure}
+
+\section{Testing}
+
+\section{Some interesting parts of the code} % Choose it/them !
+
+\section{The results}
+
+\section{Sources}
+
+
+
+
+\end{document}
