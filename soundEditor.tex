@@ -1,7 +1,7 @@
 \documentclass[paper=a4, fontsize=11pt]{scrartcl}
 
 \usepackage[latin1]{inputenc}
-\usepackage[T1]{fontenc}
+\usepackage[T1]{lmodern}
 \usepackage[english]{babel} 
 \usepackage{url} % for clickable links
 %\usepackage{lmodern}
@@ -27,9 +27,6 @@
 \setlength{\headheight}{13.6pt}
 %%%%%%%
 
-
-
-
 %%% Maketitle metadata
 \newcommand{\horrule}[1]{\rule{\linewidth}{#1}} 	% Horizontal rule
 
@@ -38,7 +35,7 @@
 		\usefont{OT1}{bch}{b}{n}
 		\normalfont \normalsize \textsc{Halmstad's University} \\ [25pt]
 		\horrule{0.5pt} \\[0.4cm]
-		\huge An awesome sound editor \\
+		\huge An awesome sound editor framework \\
 		\horrule{2pt} \\[0.5cm]
 }
 \author{
@@ -48,25 +45,24 @@
 }
 \date{}
 
-
-
-
-
-
-%\title{An awesome sound editor}
-%\author{\textsc{Hichame Moriceau} - \textsc{Rémi Gourdon}}
-%\date{\today} 
-
 \begin{document}
 \maketitle % Page de garde.
 
+
+
 \section{Introduction}
+
+Name-of-the-framework proposes to its user to : synthesise, visualize and modify the sound through different effects and filters with the possibility the manage the volume. The required inputs to create a sound are the frequency (Hz), the duration (s) and a volume.
 
 \section{Framework Design and structure}
 
+Add UML diagram here
+
+The  main criteria to build the structure of this framework was the expandability, we wanted the class user to be easily able to add more functionalities. This is why we aimed for this framework to be as modular as possible.
+
 \section{Testing}
 
-\section{Some interesting parts of the code} % Choose it/them !
+\section{Some interesting parts of the code} 
 
 \section{The results}
 
