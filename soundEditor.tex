@@ -1,77 +1,76 @@
-\documentclass[paper=a4, fontsize=11pt]{scrartcl}
+\documentclass{report}
 
 \usepackage[latin1]{inputenc}
-\usepackage[T1]{lmodern}
 \usepackage[english]{babel} 
-\usepackage{url} % for clickable links
-%\usepackage{lmodern}
-%\usepackage[top=5cm, bottom=5cm, left=6cm, right=3cm]{geometry} % Les marges.
-\usepackage[protrusion=true,expansion=true]{microtype}	
-\usepackage[pdftex]{graphicx}	
-
-%%%%%%%%%%%%%%%
-%%% Custom sectioning
-\usepackage{sectsty}
-\allsectionsfont{\centering \normalfont\scshape}
-
-%%% Custom headers/footers
-\usepackage{fancyhdr}
-\pagestyle{fancyplain}
-\fancyhead{}											% No page header
-\fancyfoot[L]{}											% Empty 
-\fancyfoot[C]{}											% Empty
-\fancyfoot[R]{\thepage}									% Pagenumbering
-\renewcommand{\headrulewidth}{0pt}			% Remove header underlines
-\renewcommand{\footrulewidth}{0pt}				% Remove footer underlines
-\setlength{\headheight}{13.6pt}
-%%%%%%%
-
-%%% Maketitle metadata
-\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} 	% Horizontal rule
-
-\title{
-		%\vspace{-1in} 	
-		\usefont{OT1}{bch}{b}{n}
-		\normalfont \normalsize \textsc{Halmstad's University} \\ [25pt]
-		\horrule{0.5pt} \\[0.4cm]
-		\huge An awesome sound editor framework \\
-		\horrule{2pt} \\[0.5cm]
-}
-\author{
-		\normalfont 								\normalsize
-        By Hichame Moriceau and Rémi Gourdon\\[-3pt]		\normalsize
-        \today
-}
-\date{}
+\usepackage{lmodern} %font
+%\usepackage{url} % for clickable links
+\usepackage[hidelinks]{hyperref} % for links in tableofcontent
+\usepackage[top=4cm, bottom=4cm, left=4cm, right=4cm]{geometry} % for margins.
+\usepackage[pdftex]{graphicx} % for images includes
+\usepackage{titlesec}	% Remove the label ``chapter #''
+\titleformat{\chapter}% But still display it in the ToC
+  {\Large\bfseries} % format
+  {}                % label
+  {0pt}             % sep
+  {\huge}           % before-code
 
 \begin{document}
-\maketitle % Page de garde.
 
-\section{Introduction}
+% the fancy title
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % new command for the horizontal lines, change thickness here
 
+\center % Center everything on the page
+\textsc{\LARGE Halmstad's university}\\[1.5cm] % Name of your university/college
+\textsc{\Large Advanced Oriented Object Programming}\\[0.5cm] % Major heading such as course name
+%\textsc{\large Minor Heading}\\[0.5cm] % Minor heading such as course title
+% title
+\HRule \\[0.4cm]
+{ \huge \bfseries Sound editor framework}\\[0.4cm] % Title of your document
+\HRule \\[1.5cm]
+ 
+% Authors
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Authors:}\\
+Rémi \textsc{Gourdon}\\
+Hichame \textsc{Moriceau} % Your name % Your name
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervisor:} \\
+Dr. Veronica \textsc{Gaspes} % Supervisor's Name
+\end{flushright}
+\end{minipage}\\[4cm]
+{\large \today}\\[3cm] % Date
+\vfill % fill the rest of the page with whitespace
+\end{titlepage}
+% end of : fancy title
+
+
+\tableofcontents % add summary
+
+
+\chapter{Introduction}
 Name-of-the-framework proposes to its user to : synthesise, visualize and modify the sound through different effects and filters with the possibility the manage the volume. The required inputs to create a sound are the frequency (Hz), the duration (s) and a volume.
 
-\section{Framework Design and structure}
+\chapter{Design and structure}
 
 %\includegraphics[scale=0.5]{Add UML diagram here}
 
-
-% To be reviewed
-The  main criteria to build the structure of this framework was the expandability, we wanted the class user to be easily able to add more functionalities. This is why we aimed for this framework to be as modular as possible. To reach this goal, we had no choice but using design patterns. We can see that we used the model/view/controller architecture, which is represented here with the Sound as the model, the View is obviously a view.\par
+The  main criteria to build the structure of this framework was the expandability, we wanted the class user to be easily able to add more functionalities. This is why we aimed for this framework to be as modular and generic as possible. To reach this goal, we had no choice but using design patterns. We can see that we used the model/view/controller architecture, which is represented here with the Sound as the model, the View is obviously a view.\par
 The Strategy pattern is used several times, for the choice of the signal, of the filter and the effect.
 
-\section{Testing}
-
-Our first approach has been to implement a good contract, setting the invariants and checking the necessary preconditions of our methods.
+\chapter{Testing}
 
 
-\section{Some interesting parts of the code} 
+\chapter{Some interesting parts of the code} 
 
-\section{Results}
+\chapter{Results}
 
-\section{Sources}
-
-
+\chapter{Sources}
 
 
 \end{document}
