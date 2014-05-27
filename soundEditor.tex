@@ -91,6 +91,15 @@ This implementation makes it possible for a Parameter object to be updated throu
 He will then be able to parse the value coming from the user interface, then send back the correct value to the editor as well as notifying its Modifier that a change in the parameter's value occured.
 It also means that the value of the parameter could be set from anywhere else in the class, through its standard library, but the model and the associated editor would in any case be notified of the changes.
 
+\paragraph{Views}
+We think having the opportunity to display the model through different perspectives gives another dimension to the framework.
+This is why having a visual representation of the sounds was also one of our objectives.
+To fit to the concept of extensibility, we wanted the class user to be able to add more views, which is done just by implementing the View interface and creating a new one.
+The spectral view relies on the use of an external ressource, the FFT\footnote{http://nayuki.eigenstate.org/page/free-small-fft-in-multiple-languages/ by Nayuki Minase/} class.
+The reason why we chose this resource is because it is more flexible than most of the transform algorithms we can find on the web, which usually require an array that is a power of 2 as a parameter.
+Indeed, the size of the sound data array depends on the duration the user has selected and therefore we needed a more flexible approach.
+The one we chose, checks the size of its given parameter and execute the right algorithm either the Cooley-Tukey decimation-in-time radix-2 algorithm if the size of the given array is a power of 2 or the Bluestein's chirp z-transform algorithm.
+
 \paragraph{Strategy Pattern}
 The extensibility comes also from the use of the Strategy Pattern in the implementation both of the generators and the modifiers.
 One generator must be affected to the Sound in order for it to produce a signal to be played.
@@ -106,8 +115,6 @@ As the requirements were to provide a graphical user interface, we decided to de
 It means that a client application could very well be working fully from the command line, though we didn't provide any example of this kind, because it wasn't our goal.
 It could also be an hybrid, like the basic editor, which is taking its initial input from the console and then provides a graphical interface for further tweaking, playing and visualization of the signals.
 Finally it can be fully graphical, as you can see in the matrix editor implementation, which provides a prebuild set of sounds, and the panels to adjusts their parameters further on.
-\section{Views}	
-We think having the opportunity to display the model through different perspectives gives another dimension to the framework. This is why having a visual representation of the sounds was also one of our objectives. To fit to the concept of extensibility, we wanted the class user to be able to add more views, which is done just by implementing the View interface and create a new one. The spectral view relies on the use of an external ressource, the FFT\footnote{http://nayuki.eigenstate.org/page/free-small-fft-in-multiple-languages/ by Nayuki Minase/} class. The reason why we choose this resource is because it is more flexible than most of the transform algorithms we can find on the web, which usually require an array that is a power of 2 as parameter. Indeed, the size of the sound data array depends on the duration the user has select therefore we needed a more flexible approach. The one we chose, checks the size of its given parameter and execute the right algorithm either the Cooley-Tukey decimation-in-time radix-2 algorithm if the size of the given array is a power of 2 or the Bluestein's chirp z-transform algorithm.
 
 \section{Basic Editor}
 
